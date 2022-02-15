@@ -2,10 +2,21 @@
 	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
 		"rootDir": "./",
+		"baseUrl": "./",
 		"outDir": "../dist",
 		"composite": true,
 		"preserveConstEnums": true,
-		"useDefineForClassFields": false
+		"useDefineForClassFields": false,
+		"paths": {
+			"#config": ["config.ts"],
+			"#lib/database": ["lib/database/index.ts"],
+			"#lib/i18n": ["lib/i18n/index.ts"],
+			"#lib/structures": ["lib/structures/index.ts"],
+			"#lib/types": ["lib/types/index.ts"],
+			"#lib/utils": ["lib/utils/index.ts"],
+			"#lib/*": ["lib/*"]
+		}
 	},
-	"include": ["."]
+	"include": [".", "**/*.json"],
+	"exclude": ["tsconfig.json"]
 }
